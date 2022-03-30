@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class PrimeAndFibonacci {
+	 static boolean prime(int temp) {
+		for(int i=2;i<temp;i++) {
+			if(temp%i==0)return false;
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+	Scanner in=new Scanner(System.in);
+	int count,temp=2,total=1;
+	System.out.print("Enter the size of fibonacci : ");
+	count=in.nextInt();
+	System.out.print(total+" ");
+	while(count>1) {
+		if(prime(temp)) {
+			total+=temp;
+			System.out.print(total+" ");
+			temp++;
+			count--;
+		}else {
+			temp++;
+		}
+	}
+	}
+
+}
