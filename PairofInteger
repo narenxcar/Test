@@ -1,0 +1,36 @@
+import java.util.*;
+class Input{
+	void input() {
+	Scanner in=new Scanner(System.in);
+	System.out.print("Enter the size of array :");
+	int size=in.nextInt();
+	int[] arr=new int[size];
+	System.out.print("Enter the elements of array :");
+	for(int index=0;index<size;index++) {
+		arr[index]=in.nextInt();
+	}
+	System.out.print("Enter the key value : ");
+	int key=in.nextInt();
+	search(arr,key);
+	}
+	void search(int[] arr,int key) {
+		for(int i=0;i<arr.length-1;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				if((arr[i]+arr[j])%key==0) {
+					System.out.println(arr[i]+" "+arr[j]);
+				}
+			}
+		}
+	}
+	
+}
+
+public class PairofInteger {
+
+	public static void main(String[] args) {
+		Input input=new Input();
+		input.input();
+
+	}
+
+}
