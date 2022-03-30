@@ -1,0 +1,27 @@
+import java.util.*;
+public class StringAanagram {
+	static boolean compare(char[] first, char[] second) {
+		if(first.length != second.length)return false;
+		Arrays.sort(first);
+		Arrays.sort(second);
+		for(int i=0;i<first.length;i++) {
+			if(first[i]!=second[i])return false;
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.print("Enter the first String : ");
+		String first=in.next();
+		System.out.print("Enter the secon String : ");
+		String second=in.next();	
+		char[] firstChar=first.toCharArray();
+		char[] secondChar=second.toCharArray();
+		if(compare(firstChar,secondChar)) {
+			System.out.print(first +" & "+second+" are anagrams ");
+		}else {
+			System.out.print(first +" & "+second+" are not anagrams ");
+		}
+	}
+
+}
